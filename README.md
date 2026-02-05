@@ -15,3 +15,12 @@ This project is built upon [3DGS](https://github.com/graphdeco-inria/gaussian-sp
 ## Citation
 
 If you find this project useful, please consider citing:
+
+```bibtex
+@article{ding2026step,
+  title={A Step to Decouple Optimization in 3DGS},
+  author={Ding, Renjie and Wang, Yaonan and Liu, Min and Zhu, Jialin and Wang, Jiazheng and Zhao, Jiahao and Shen, Wenting and He, Feixiang and Che, Xiang},
+  journal={arXiv preprint arXiv:2601.16736},
+  year={2026}
+}
+```
