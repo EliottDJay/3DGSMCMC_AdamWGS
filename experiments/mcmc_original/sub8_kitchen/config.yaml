@@ -1,0 +1,55 @@
+model:
+  source_path: 
+  data_name: mid_Nerf_360_kitchen
+  images: # images_2 images_4 images_8 different resolution
+  resolution: -1
+  white_background: False
+  white_bg: False
+  eval: True
+  sh_degree: 3
+  divide_ratio: 0.8
+  init_type: sfm
+  cap_max: 1810000
+  num_pts: 100000
+
+
+trainer:
+  iterations: 30000
+  position_lr_init: 0.00016
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.005
+  rotation_lr: 0.001
+  percent_dense: 0.01
+  lambda_dssim: 0.2
+  densification_interval: 100
+  opacity_reset_interval: 3000
+  densify_from_iter: 500
+  densify_until_iter: 25000
+  densify_grad_threshold: 0.0002
+  random_background: False
+
+  scale_reg: 0.01
+  opacity_reg: 0.01
+
+  restate_regularization:
+    use_rsr: False
+    er_prob: 0.05
+    begin: 1000
+    end: 25000
+    strategy: uni_curriculum
+    interval: 100
+    ratial_list: [0.1, 0.2, 0.15]
+    ratio_shift: [1000, 15000, 20000]
+
+  warmup_iter: 0
+  shgreedupdate_begin: 0
+
+
+pipe:
+  convert_SHs_python: False
+  compute_cov3D_python: False
+  debug: False
